@@ -1,0 +1,24 @@
+{
+  "name": "gRpc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-dts": "proto-loader-gen-types --grpcLib=@grpc/grpc-js --outDir=proto proto/hello.proto",
+    "build-proto": "protoc-gen-grpc-ts --ts_out=grpc_js:./ ./proto/hello.proto",
+    "server": "node ./dist/src/server.js",
+    "client": "node ./dist/src/client.js",
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.8.15",
+    "@grpc/proto-loader": "^0.7.7",
+    "protoc-gen-grpc": "^2.0.4"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.3"
+  }
+}
